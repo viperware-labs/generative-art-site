@@ -12,6 +12,7 @@ export function Miner() {
   const { data: ensName } = useEnsName({ address });
 
   const [seed, setSeed] = useState(0);
+  const [difficulty, setDifficulty] = useState(0);
   const [seedMatches, setSeedMatches] = useState(false);
   const [miningEnabled, setMiningEnabled] = useState(false);
 
@@ -32,8 +33,13 @@ export function Miner() {
     ],
     onSuccess(difficultyData) {
       console.log('Difficulty: ', difficultyData);
-      //@ts-ignore
-      console.log('Difficulty: ', (!difficultyData ? difficultyData[0].toNumber() : 0));
+      try {
+        // @ts-ignore
+        if (difficultyData != null || difficultyData != undefined) setDifficulty(difficultyData[0].toNumber());
+      } catch (e) {
+        console.log(e);
+      }
+      
     },
   })
 
@@ -44,7 +50,7 @@ export function Miner() {
         functionName: 'matchesWithDifficulty',
         chainId: 5,
         //@ts-ignore
-        args: [seed, (!difficultyData ? difficultyData[0].toNumber() : 1)], // difficultyData[0].toNumber()
+        args: [seed, difficulty], // difficultyData[0].toNumber()
       },
     ],
     onSuccess(matchData) {
