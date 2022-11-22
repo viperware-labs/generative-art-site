@@ -94,7 +94,7 @@ export function Miner() {
             </>
             :
             <>
-              <div className="w-full px-5 text-xl">Hey fren. You're on {chain?.name}. You think you could switch your network to the Goerli Testnet for us?</div>
+              <div className="w-full px-5 text-xl">Hey fren. You&apos;re on {chain?.name}. You think you could switch your network to the Goerli Testnet for us?</div>
             </>}
 
       </div>
