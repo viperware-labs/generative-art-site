@@ -1,1 +1,1 @@
-export { Account } from './Account'
+export { Miner } from './Miner'
