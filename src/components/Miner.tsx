@@ -33,7 +33,7 @@ export function Miner() {
     onSuccess(difficultyData) {
       console.log('Difficulty: ', difficultyData);
       //@ts-ignore
-      console.log('Difficulty: ', (difficultyData[0].toNumber() ? difficultyData[0].toNumber() : 0));
+      console.log('Difficulty: ', (!difficultyData ? difficultyData[0].toNumber() : 0));
     },
   })
 
@@ -44,7 +44,7 @@ export function Miner() {
         functionName: 'matchesWithDifficulty',
         chainId: 5,
         //@ts-ignore
-        args: [seed, (difficultyData[0].toNumber() ? difficultyData[0].toNumber() : 0)], // difficultyData[0].toNumber()
+        args: [seed, (!difficultyData ? difficultyData[0].toNumber() : 1)], // difficultyData[0].toNumber()
       },
     ],
     onSuccess(matchData) {
