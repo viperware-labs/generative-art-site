@@ -49,13 +49,17 @@ export function Miner() {
         ...goerliKeccupContract,
         functionName: 'matchesWithDifficulty',
         chainId: 5,
-        //@ts-ignore
         args: [seed, difficulty], // difficultyData[0].toNumber()
       },
     ],
     onSuccess(matchData) {
-      //@ts-ignore
-      let matches = (0 === matchData[0].toNumber());
+      let matches = false;
+      try {
+        // @ts-ignore
+        matches = (0 === matchData[0].toNumber());
+      } catch (e) {
+        console.log(e);
+      }
       setSeedMatches(matches);
       console.log('Match: ', matches ? "TRUE" : "FALSE");
       console.log('Match: ', matches);
