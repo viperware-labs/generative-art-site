@@ -1,4 +1,4 @@
-import { useAccount, useEnsName, useNetwork } from 'wagmi'
+import { useAccount, useConnect, useEnsName, useNetwork } from 'wagmi'
 import keccupABI from '../abi.json';
 import { ethers } from "ethers";
 import { keccak256, parseEther } from 'ethers/lib/utils';
@@ -7,7 +7,7 @@ import { useState } from 'react';
 import styles from '../../styles/Home.module.css';
 
 export function Miner() {
-  const { address } = useAccount();
+  const { address, isConnected } = useAccount();
   const { chain, chains } = useNetwork();
   const { data: ensName } = useEnsName({ address });
 
@@ -84,8 +84,7 @@ export function Miner() {
         {/* {chains && (
           <div>Available chains: {chains.map((chain) => chain.name)}</div>
         )} */}
-
-        {chain && chain.name == "Goerli" ? 
+        {isConnected ? (chain && chain.name == "Goerli" ? 
             <>
               <div className={"text-md lg:text-lg"}>
                 {ensName ?? address}
@@ -105,7 +104,16 @@ export function Miner() {
             :
             <>
               <div className="w-full px-5 text-xl">Hey fren. You&apos;re on {chain?.name}. You think you could switch your network to the Goerli Testnet for us?</div>
-            </>}
+            </>
+            ) : (
+              <>
+                <div className={"text-lg lg:text-2xl"}>
+                  Connect your wallet to start exploring.
+                </div><br/>
+              </>
+            )}
+
+        
 
       </div>
     </>

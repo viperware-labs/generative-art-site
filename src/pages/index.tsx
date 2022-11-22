@@ -24,7 +24,7 @@ function Page() {
         </div>
       </div>
       <div className={styles.main}>
-        {isConnected && <Miner />}
+        <Miner />
       </div>
     </div>
   )
