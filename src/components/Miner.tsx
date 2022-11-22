@@ -20,55 +20,49 @@ export function Miner() {
   const goerliKeccupContract = {
     address: '0x14BD2123Ea8AFCe4b995968F93f280B70F09E559',
     abi: keccupABI,
-  }
+  } 
   
-  try {
-
-    const { data: difficultyData } = useContractReads({
-      contracts: [
-        {
-          ...goerliKeccupContract,
-          functionName: 'difficulty',
-          chainId: 5,
-        },
-      ],
-      onSuccess(difficultyData) {
-        console.log('Difficulty: ', difficultyData);
-        //@ts-ignore
-        console.log('Difficulty: ', difficultyData[0].toNumber());
+  const { data: difficultyData } = useContractReads({
+    contracts: [
+      {
+        ...goerliKeccupContract,
+        functionName: 'difficulty',
+        chainId: 5,
       },
-    })
-  
-    const { data: matchData } = useContractReads({
-      contracts: [
-        {
-          ...goerliKeccupContract,
-          functionName: 'matchesWithDifficulty',
-          chainId: 5,
-          //@ts-ignore
-          args: [seed, difficultyData[0].toNumber()], // difficultyData[0].toNumber()
-        },
-      ],
-      onSuccess(matchData) {
+    ],
+    onSuccess(difficultyData) {
+      console.log('Difficulty: ', difficultyData);
+      //@ts-ignore
+      console.log('Difficulty: ', difficultyData[0].toNumber());
+    },
+  })
+
+  const { data: matchData } = useContractReads({
+    contracts: [
+      {
+        ...goerliKeccupContract,
+        functionName: 'matchesWithDifficulty',
+        chainId: 5,
         //@ts-ignore
-        let matches = (0 === matchData[0].toNumber());
-        setSeedMatches(matches);
-        console.log('Match: ', matches ? "TRUE" : "FALSE");
-        console.log('Match: ', matches);
-        // Continue Mining
-        if (miningEnabled) {
-          console.log("Increase to ", seed);
-          setSeed(seed + 1);
-        }
-        if (!matches) {
-          // Found Match
-        }
+        args: [seed, difficultyData[0].toNumber()], // difficultyData[0].toNumber()
       },
-    })
-
-  } catch (e) {
-
-  }
+    ],
+    onSuccess(matchData) {
+      //@ts-ignore
+      let matches = (0 === matchData[0].toNumber());
+      setSeedMatches(matches);
+      console.log('Match: ', matches ? "TRUE" : "FALSE");
+      console.log('Match: ', matches);
+      // Continue Mining
+      if (miningEnabled) {
+        console.log("Increase to ", seed);
+        setSeed(seed + 1);
+      }
+      if (!matches) {
+        // Found Match
+      }
+    },
+  })
 
   return (
     <>
@@ -100,7 +94,7 @@ export function Miner() {
             </>
             :
             <>
-              <div className="w-full px-5 text-xl">Hey bud. You're on {chain?.name}. You think you could switch your network to Goerli for us?</div>
+              <div className="w-full px-5 text-xl">Hey fren. You're on {chain?.name}. You think you could switch your network to the Goerli Testnet for us?</div>
             </>}
 
       </div>
