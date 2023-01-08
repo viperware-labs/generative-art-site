@@ -1,7 +1,7 @@
 import '../../styles/globals.css';
 import '@rainbow-me/rainbowkit/styles.css';
 import { RainbowKitProvider, getDefaultWallets, darkTheme } from '@rainbow-me/rainbowkit';
-import { chain, configureChains, createClient, WagmiConfig } from 'wagmi';
+import { Chain, configureChains, createClient, WagmiConfig } from 'wagmi';
 import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public';
 import '@rainbow-me/rainbowkit/styles.css'

@@ -4,7 +4,8 @@ import Head from 'next/head';
 import dynamic from "next/dynamic"
 
 import styles from '../../styles/Home.module.css';
-import { Miner } from '../components'
+// import p5 from 'p5'
+import { Art } from '../components/Art2'
 
 function Page() {
   const { isConnected } = useAccount()
@@ -24,7 +25,10 @@ function Page() {
         </div>
       </div>
       <div className={styles.main}>
-        <Miner />
+        {/* <div className='w-full text-white border'>Hey</div> */}
+        <div className="border-zinc-300 scale-50 origin-top border-8 rounded-3xl overflow-hidden">
+            <Art/>
+        </div>
       </div>
     </div>
   )

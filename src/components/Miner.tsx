@@ -3,7 +3,7 @@ import keccupABI from '../abi.json';
 import { ethers } from "ethers";
 import { keccak256, parseEther } from 'ethers/lib/utils';
 import { useContractReads } from 'wagmi';
-import { useState } from 'react';
+import { SetStateAction, useState } from 'react';
 import styles from '../../styles/Home.module.css';
 
 export function Miner() {
@@ -17,7 +17,6 @@ export function Miner() {
   const [miningEnabled, setMiningEnabled] = useState(false);
 
   // 0xdab1d65d8c2bba440b14d6dc40a16cd843c43e22
- 
   const goerliKeccupContract = {
     address: '0x14BD2123Ea8AFCe4b995968F93f280B70F09E559',
     abi: keccupABI,
@@ -31,7 +30,7 @@ export function Miner() {
         chainId: 5,
       },
     ],
-    onSuccess(difficultyData) {
+    onSuccess(difficultyData: { toNumber: () => SetStateAction<number>; }[] | null | undefined) {
       console.log('Difficulty: ', difficultyData);
       try {
         // @ts-ignore
@@ -52,7 +51,7 @@ export function Miner() {
         args: [seed, difficulty], // difficultyData[0].toNumber()
       },
     ],
-    onSuccess(matchData) {
+    onSuccess(matchData: { toNumber: () => number; }[]) {
       let matches = false;
       try {
         // @ts-ignore
