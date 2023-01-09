@@ -22,21 +22,18 @@ function Page() {
       </Head>
       <div className="mx-auto max-w-[1200px]">
         <div className="flex p-5">
-          <div className="text-white text-4xl flex">
-            <NavBar />
-          </div>
-          <div className="ml-auto">
-            <ConnectButton />
+          <div className="text-white text-4xl w-full flex">
+            <NavBar/>
           </div>
         </div>
         <div className={styles.main}>
           <div className='w-full text-white text-6xl text-center my-10 tracking-wider'>Joints</div>
-          <div className="border-zinc-300 border-8 rounded-3xl overflow-hidden h-[500px] w-[500px]">
-            <div className="scale-50 origin-top-left">
+          <div className="border-zinc-300 border-8 rounded-3xl overflow-hidden h-[300px] w-[300px] sm:h-[500px] sm:w-[500px]">
+            <div className="scale-[29%] sm:scale-50 origin-top-left">
               <Joints />
             </div>
           </div>
-          <div className='w-full text-white text-2xl text-center my-10 tracking-wider'>Click to generate new a Joint</div>
+          <div className='w-full text-white text-2xl text-center my-10 tracking-wider'>Click to generate new a Joint!</div>
         </div>
       </div>
     </div>

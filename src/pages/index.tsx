@@ -22,15 +22,11 @@ function Page() {
       </Head>
       <div className="mx-auto max-w-[1200px]">
         <div className="flex p-5">
-          <div className="text-white text-4xl flex">
+          <div className="text-white text-4xl w-full flex">
             <NavBar/>
-          </div>
-          <div className="ml-auto">
-            <ConnectButton />
           </div>
         </div>
         <div className={styles.main}>
-          {/* <div className='w-full text-white border'>Hey</div> */}
           <div className="font-bold text-6xl text-white tracking-widest">
             0xBold.art
           </div>

@@ -19,3 +19,31 @@
     font-style: normal;
   }
 }
+
+.fade-in {
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    bottom: -100%;
+  }
+
+  to {
+    bottom: 0;
+  }
+}
+
+.fade-out {
+  animation: fadeOut 0.6s ease-in;
+}
+
+@keyframes fadeOut {
+  from {
+    bottom: 0;
+  }
+
+  to {
+    bottom: -100%;
+  }
+}
