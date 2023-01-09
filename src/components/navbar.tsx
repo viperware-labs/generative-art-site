@@ -68,13 +68,13 @@ const NavBar = () => {
 			<nav className="hidden sm:flex items-center justify-between p-2 bg-transparent z-[9999] w-full">
 				<div className="relative">
 
-					<button className="text-white text-4xl font-bold rounded-full focus:outline-none focus:shadow-outline-blue">
+					<button className="text-white text-4xl font-bold rounded-full focus:outline-none focus:shadow-outline-blue mr-10">
 						<Link href="/">
 							0xBold.art
 						</Link>
 					</button>
 
-					<button onClick={() => handleClick('collections')} className="text-white text-3xl font-medium rounded-full focus:outline-none focus:shadow-outline-blue">
+					<button onClick={() => handleClick('collections')} className="text-white text-3xl font-medium rounded-full focus:outline-none focus:shadow-outline-blue mr-10">
 						Collections
 					</button>
 
@@ -98,7 +98,7 @@ const NavBar = () => {
 						</div>
 					)}
 
-					<button onClick={() => handleClick('collections')} className="text-white text-3xl font-medium rounded-full focus:outline-none focus:shadow-outline-blue">
+					<button onClick={() => handleClick('collections')} className="text-white text-3xl font-medium rounded-full focus:outline-none focus:shadow-outline-blue mr-10">
 						About
 					</button>
 				</div>
