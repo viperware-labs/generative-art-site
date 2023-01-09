@@ -16,6 +16,6 @@
     "incremental": true,
     "allowSyntheticDefaultImports": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/components/Art.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/components/Art.js", "src/components/art/flowsArt.js"],
   "exclude": ["node_modules"]
 }

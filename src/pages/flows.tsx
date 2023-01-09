@@ -5,7 +5,7 @@ import dynamic from "next/dynamic"
 
 import styles from '../../styles/Home.module.css';
 // import p5 from 'p5'
-import { Joints } from '../components/art/jointsArt'
+import { Flows } from '../components/art/flowsArt.js'
 import NavBar from '../components/navbar';
 
 function Page() {
@@ -13,7 +13,7 @@ function Page() {
   return (
     <div className={styles.background}>
       <Head>
-        <title>0xBold.art</title>
+        <title>Flows | 0xBold.art</title>
         <meta
           name="description"
           content="0xBold.art"
@@ -30,10 +30,13 @@ function Page() {
           </div>
         </div>
         <div className={styles.main}>
-          {/* <div className='w-full text-white border'>Hey</div> */}
-          <div className="font-bold text-6xl text-white tracking-widest">
-            0xBold.art
+          <div className='w-full text-white text-6xl text-center my-10 tracking-wider'>Flows</div>
+          <div className="border-zinc-300 border-8 rounded-3xl overflow-hidden h-[500px] w-[500px]">
+            <div className="scale-50 origin-top-left">
+              <Flows />
+            </div>
           </div>
+          <div className='w-full text-white text-2xl text-center my-10 tracking-wider'>Click to generate new a Flow</div>
         </div>
       </div>
     </div>

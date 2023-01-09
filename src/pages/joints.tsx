@@ -13,7 +13,7 @@ function Page() {
   return (
     <div className={styles.background}>
       <Head>
-        <title>0xBold.art</title>
+        <title>Joints | 0xBold.art</title>
         <meta
           name="description"
           content="0xBold.art"
@@ -23,17 +23,20 @@ function Page() {
       <div className="mx-auto max-w-[1200px]">
         <div className="flex p-5">
           <div className="text-white text-4xl flex">
-            <NavBar/>
+            <NavBar />
           </div>
           <div className="ml-auto">
             <ConnectButton />
           </div>
         </div>
         <div className={styles.main}>
-          {/* <div className='w-full text-white border'>Hey</div> */}
-          <div className="font-bold text-6xl text-white tracking-widest">
-            0xBold.art
+          <div className='w-full text-white text-6xl text-center my-10 tracking-wider'>Joints</div>
+          <div className="border-zinc-300 border-8 rounded-3xl overflow-hidden h-[500px] w-[500px]">
+            <div className="scale-50 origin-top-left">
+              <Joints />
+            </div>
           </div>
+          <div className='w-full text-white text-2xl text-center my-10 tracking-wider'>Click to generate new a Joint</div>
         </div>
       </div>
     </div>

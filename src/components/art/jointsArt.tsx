@@ -11,10 +11,7 @@ interface ComponentProps {
 	//Your component props
 }
 
-let x = 50;
-const y = 50;
-
-export const Art: React.FC<ComponentProps> = (props: ComponentProps) => {
+export const Joints: React.FC<ComponentProps> = (props: ComponentProps) => {
 
 	const setup = (p5: p5Types, canvasParentRef: Element) => {
 		p5.noLoop();
