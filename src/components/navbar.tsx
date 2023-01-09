@@ -25,13 +25,13 @@ const NavBar = () => {
 			<nav className="flex sm:hidden items-center justify-between p-2 bg-transparent z-[9999] w-full">
 				<div className="relative justify-start">
 
-					<button className="text-white text-4xl font-bold rounded-full focus:outline-none focus:shadow-outline-blue w-full text-left">
+					<button className="text-white text-4xl font-bold rounded-full focus:outline-none focus:shadow-outline-blue w-full text-left my-1">
 						<Link href="/">
 							0xBold.art
 						</Link>
 					</button>
 
-					<button onClick={() => handleClick('collections')} className="text-white text-3xl font-medium rounded-full focus:outline-none focus:shadow-outline-blue w-full text-left">
+					<button onClick={() => handleClick('collections')} className="text-white text-3xl font-medium rounded-full focus:outline-none focus:shadow-outline-blue w-full text-left my-1">
 						Collections
 					</button>
 
@@ -57,7 +57,7 @@ const NavBar = () => {
 						</div>
 					)}
 
-					<button onClick={() => handleClick('about')} className="text-white text-3xl font-medium rounded-full focus:outline-none focus:shadow-outline-blue w-full text-left">
+					<button onClick={() => handleClick('about')} className="text-white text-3xl font-medium rounded-full focus:outline-none focus:shadow-outline-blue w-full text-left my-1">
 						About
 					</button>
 				</div>
@@ -68,13 +68,13 @@ const NavBar = () => {
 			<nav className="hidden sm:flex items-center justify-between p-2 bg-transparent z-[9999] w-full">
 				<div className="relative">
 
-					<button className="text-white text-4xl font-bold rounded-full focus:outline-none focus:shadow-outline-blue mr-10">
+					<button className="text-white text-4xl font-bold rounded-full focus:outline-none focus:shadow-outline-blue">
 						<Link href="/">
 							0xBold.art
 						</Link>
 					</button>
 
-					<button onClick={() => handleClick('collections')} className="text-white text-3xl font-medium rounded-full focus:outline-none focus:shadow-outline-blue mr-10">
+					<button onClick={() => handleClick('collections')} className="text-white text-3xl font-medium rounded-full focus:outline-none focus:shadow-outline-blue">
 						Collections
 					</button>
 
@@ -98,7 +98,7 @@ const NavBar = () => {
 						</div>
 					)}
 
-					<button onClick={() => handleClick('collections')} className="text-white text-3xl font-medium rounded-full focus:outline-none focus:shadow-outline-blue mr-10">
+					<button onClick={() => handleClick('collections')} className="text-white text-3xl font-medium rounded-full focus:outline-none focus:shadow-outline-blue">
 						About
 					</button>
 				</div>
