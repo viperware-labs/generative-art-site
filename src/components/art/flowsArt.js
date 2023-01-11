@@ -12,16 +12,16 @@ const p5 = dynamic(() => import('p5').then((mod) => mod.default), {
   ssr: false,
 })
 
-export const Flows = () => {
+export const Flows = (props) => {
 
-  const dimensions = 10;
-  const pieces = 10;
+  let dimensions = props.dimensions;
+  let colors = props.colors;
   const artWidth = 880;
 
   const lineWeight = 8;
   const lineStroke = 0;
 
-  function completePuzzle(p5, array, pieces) {
+  function completePuzzle(p5, array, colors) {
     console.log("start");
     const queue = [];
     const directions = [
@@ -31,7 +31,7 @@ export const Flows = () => {
       [0, 1]
     ];
 
-    // Find all of the starting points for the pieces
+    // Find all of the starting points for the colors
     for (let i = 0; i < array.length; i++) {
       for (let j = 0; j < array[i].length; j++) {
         if (array[i][j] !== 0) {
@@ -57,7 +57,7 @@ export const Flows = () => {
     return array;
   }
 
-  function generateArray(p5, dimensions, pieces) {
+  function generateArray(p5, dimensions, colors) {
 
     // Create an empty array to represent the puzzle
     const puzzle = [];
@@ -70,11 +70,11 @@ export const Flows = () => {
 
     // Generate a set of random starting points
     const starts = new Set();
-    while (starts.size < pieces) {
+    while (starts.size < colors) {
       starts.add([Math.floor(Math.random() * dimensions), Math.floor(Math.random() * dimensions)]);
     }
 
-    // Place the pieces on the board
+    // Place the colors on the board
     let current = 1;
     for (const start of starts) {
       let x = start[0];
@@ -105,15 +105,15 @@ export const Flows = () => {
 
     // Generate a random color for each section
     let sectionColors = [];
-    for (let i = 0; i < pieces; i++) {
+    for (let i = 0; i < colors; i++) {
       let r = Math.floor(Math.random() * 256);
       let g = Math.floor(Math.random() * 256);
       let b = Math.floor(Math.random() * 256);
       sectionColors.push([r, g, b]);
     }
   
-    let puzzle = generateArray(p5, dimensions, pieces);
-    const solution = completePuzzle(p5, puzzle, pieces);
+    let puzzle = generateArray(p5, dimensions, colors);
+    const solution = completePuzzle(p5, puzzle, colors);
     
     p5.noStroke();
 
